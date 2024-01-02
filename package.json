@@ -18,7 +18,11 @@
     "@angular/core": "^17.0.0",
     "@angular/forms": "^17.0.0",
     "@angular/material": "^17.0.4",
+<<<<<<< HEAD
+    "@angular/platform-browser": "^17.0.8",
+=======
     "@angular/platform-browser": "^17.0.0",
+>>>>>>> project-portal-turismo/main
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/platform-server": "^17.0.0",
     "@angular/router": "^17.0.0",
@@ -43,4 +47,8 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.2.2"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> project-portal-turismo/main
