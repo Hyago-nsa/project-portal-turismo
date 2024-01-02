@@ -1,4 +1,5 @@
 .app-header {
+  border: 5px solid red;
 }
 
 .app-header button {
