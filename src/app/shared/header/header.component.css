@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .app-header {
   border: 4px solid red;
 }
@@ -19,3 +20,9 @@
 .app-header .mat-mdc-outlined-button:not(:disabled) {
   border-color: white;
 }
+=======
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+>>>>>>> project-portal-turismo/main
