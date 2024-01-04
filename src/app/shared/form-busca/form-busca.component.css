@@ -10,13 +10,40 @@
   gap: 12px;
   margin: 16px 0;
 }
+
+.form-busca .flex-container mat-button-toggle-group {
+  height: 42px;
+  align-items: center;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+}
+
+.form-busca .flex-container mat-chip-option {
+  height: 42px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+}
+
+.mat-mdc-standard-chip {
+  --mdc-chip-elevated-container-color: transparent;
+}
+
+.form-busca
+  .form-busca[_ngcontent-ng-c1640374969]
+  .mat-mdc-standard-chip[_ngcontent-ng-c1640374969]:not(
+    .mdc-evolution-chip--disabled
+  ) {
+  background-color: none;
+}
+
 .form-busca .input-container {
   margin-bottom: -1.25em;
 }
 .form-busca .mat-button-toggle-checked {
-  background-color: #f7f2fa;
+  background-color: #673ab7;
+  color: white;
 }
+
 .form-busca h2 {
-  font-size: 32px;
+  font-size: 20px;
   margin-bottom: 20px;
 }

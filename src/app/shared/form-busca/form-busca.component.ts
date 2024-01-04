@@ -5,6 +5,11 @@ import { CardComponent } from '../card/card.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-form-busca',
@@ -16,8 +21,17 @@ import { MatInputModule } from '@angular/material/input';
     MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   templateUrl: './form-busca.component.html',
   styleUrl: './form-busca.component.css',
 })
-export class FormBuscaComponent {}
+export class FormBuscaComponent {
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(ModalComponent);
+  }
+}
