@@ -22,3 +22,7 @@
 .app-footer .inner ul .socials li {
   text-align: center;
 }
+
+footer img {
+  max-width: 100%;
+}
