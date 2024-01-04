@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerComponent } from '../container/container.component';
 
+
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -10,5 +11,5 @@ import { ContainerComponent } from '../container/container.component';
   styleUrl: './card.component.css',
 })
 export class CardComponent {
-  @Input() variant: 'primary' | 'secondary' = 'primary';
+  @Input() variant: 'primary' | 'secundary' = 'primary';
 }
