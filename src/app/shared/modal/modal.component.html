@@ -12,7 +12,7 @@
             alt="Operador de subtração"
           />
         </button>
-        <span>{{ contadores[categoria.nome] }}</span>
+        <span>{{ (contadores$ | async)?.[categoria.nome] ?? 0 }}</span>
         <button (click)="alterarContador(categoria.nome,'aumentar')" mat-mini-fab color="primary">
           <img
             src="../../../assets/icones/add_circle.png"

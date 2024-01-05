@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
-import { NgFor } from '@angular/common';
+import { AsyncPipe, NgFor } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { aumentar, diminuir } from '../../ngrx/contador/contador.action';
 
 type CategoriaNome = 'Adultos' | 'Crianças' | 'Bebês';
 
@@ -11,7 +13,7 @@ interface Categoria {
   descricao: string;
 }
 
-interface Contadores {
+interface EstadoContador {
   Adultos: number;
   Crianças: number;
   Bebês: number;
@@ -20,18 +22,18 @@ interface Contadores {
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule, MatChipsModule, NgFor],
+  imports: [MatDialogModule, MatButtonModule, MatChipsModule, NgFor, AsyncPipe],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
 })
 export class ModalComponent {
-  constructor(public dialog: MatDialog) {}
-
-  contadores: Contadores = {
-    Adultos: 0,
-    Crianças: 0,
-    Bebês: 0,
-  };
+  openDialog() {
+    this.dialog.open(ModalComponent);
+  }
+  constructor(
+    public dialog: MatDialog,
+    private store: Store<{ contadores: EstadoContador }>
+  ) {}
 
   categorias: Categoria[] = [
     { nome: 'Adultos', descricao: 'Acima de 12 anos' },
@@ -39,15 +41,15 @@ export class ModalComponent {
     { nome: 'Bebês', descricao: 'Até 2 anos' },
   ];
 
-  openDialog() {
-    this.dialog.open(ModalComponent);
-  }
+  contadores$ = this.store.select('contadores');
 
   alterarContador(categoria: CategoriaNome, operacao: 'aumentar' | 'diminuir') {
     if (operacao === 'aumentar') {
-      this.contadores[categoria]++;
-    } else if (operacao === 'diminuir' && this.contadores[categoria] > 0) {
-      this.contadores[categoria]--;
+      this.store.dispatch(aumentar({ categoria }));
+      console.log('aumentar');
+    } else {
+      this.store.dispatch(diminuir({ categoria }));
+      console.log('diminuir');
     }
   }
 }
