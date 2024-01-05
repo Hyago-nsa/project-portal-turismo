@@ -10,6 +10,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { ContadorService } from '../../services/contador.service';
 
 @Component({
   selector: 'app-form-busca',
@@ -29,9 +30,18 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrl: './form-busca.component.css',
 })
 export class FormBuscaComponent {
-  constructor(public dialog: MatDialog) {}
+
+  constructor(
+    private contadorService: ContadorService,
+    public dialog: MatDialog
+  ) {}
 
   openDialog() {
     this.dialog.open(ModalComponent);
+  }
+
+  get formatarContadores(): string {
+    const contadores = this.contadorService.getContadores();
+    return `Adultos: ${contadores.Adultos}, Crianças: ${contadores.Crianças}, Bebês: ${contadores.Bebês}`;
   }
 }
