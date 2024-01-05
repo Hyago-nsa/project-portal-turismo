@@ -24,9 +24,9 @@ export class ContadorService {
   };
 
   private categorias: Categoria[] = [
-    { nome: 'Adultos', descricao: 'Acima de 12 anos' },
-    { nome: 'Crianças', descricao: 'De 2 anos até 12 anos' },
-    { nome: 'Bebês', descricao: 'Até 2 anos' },
+    { nome: 'Adultos', descricao: '(Acima de 12 anos)' },
+    { nome: 'Crianças', descricao: '(De 2 anos até 12 anos)' },
+    { nome: 'Bebês', descricao: '(Até 2 anos)' },
   ];
 
   getContadores() {

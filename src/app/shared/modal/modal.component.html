@@ -1,37 +1,48 @@
-<h1 mat-dialog-title>Viajante</h1>
-<div mat-dialog-content></div>
-<div class="selecao-idade">
-  <div *ngFor="let categoria of categorias">
-    <ul>
-      <li>{{ categoria.nome }}</li>
-      <li>{{ categoria.descricao }}</li>
-      <li>
-        <button (click)="alterarContador(categoria.nome,'diminuir')" mat-mini-fab color="primary">
-          <img
-            src="../../../assets/icones/do_not_disturb_on.png"
-            alt="Operador de subtração"
-          />
-        </button>
-        <span>{{ contadores[categoria.nome] }}</span>
-        <button (click)="alterarContador(categoria.nome,'aumentar')" mat-mini-fab color="primary">
-          <img
-            src="../../../assets/icones/add_circle.png"
-            alt="Operador de adição"
-          />
-        </button>
-      </li>
-    </ul>
+<div class="modal">
+  <h1 mat-dialog-title>Viajante</h1>
+  <div mat-dialog-content>
+    <div class="selecao-idade">
+      <div class="container-categorias" *ngFor="let categoria of categorias">
+        <ul>
+          <li>{{ categoria.nome }}</li>
+          <li>{{ categoria.descricao }}</li>
+          <li>
+            <button
+              (click)="alterarContador(categoria.nome, 'diminuir')"
+              mat-mini-fab
+              color="primary"
+            >
+              <img
+                src="../../../assets/icones/do_not_disturb_on.png"
+                alt="Operador de subtração"
+              />
+            </button>
+            <span>{{ contadores[categoria.nome] }}</span>
+            <button
+              (click)="alterarContador(categoria.nome, 'aumentar')"
+              mat-mini-fab
+              color="primary"
+            >
+              <img
+                src="../../../assets/icones/add_circle.png"
+                alt="Operador de adição"
+              />
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
 
-<h1 mat-dialog-title>Categoria</h1>
-<div mat-dialog-content>
-  <mat-chip-listbox aria-label="Seleção de passagens">
-    <mat-chip-option>Executiva</mat-chip-option>
-    <mat-chip-option>Econômica</mat-chip-option>
-  </mat-chip-listbox>
-</div>
+  <h1 mat-dialog-title>Categoria</h1>
+  <div mat-dialog-content>
+    <mat-chip-listbox aria-label="Seleção de passagens">
+      <mat-chip-option>Executiva</mat-chip-option>
+      <mat-chip-option>Econômica</mat-chip-option>
+    </mat-chip-listbox>
+  </div>
 
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Buscar</button>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Buscar</button>
+  </div>
 </div>

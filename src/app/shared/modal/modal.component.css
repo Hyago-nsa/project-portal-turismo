@@ -15,6 +15,22 @@
   justify-content: space-between;
 }
 
+.container-categorias {
+  justify-content: center;
+  margin: 0 24px;
+}
+
+.container-categorias span {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 6px;
+  margin: 0 10px;
+}
+
+.container-categorias li {
+  list-style-type: none;
+}
+
 .modal .selecao-idade ul {
   list-style-type: none;
   margin: 0 0 0 -1em;

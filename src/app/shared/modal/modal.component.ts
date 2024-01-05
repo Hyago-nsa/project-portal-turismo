@@ -15,13 +15,13 @@ type CategoriaNome = 'Adultos' | 'Crianças' | 'Bebês';
   styleUrl: './modal.component.css',
 })
 export class ModalComponent {
-  categorias = this.contadorService.getCategorias();
-  contadores = this.contadorService.getContadores();
-
   constructor(
     private contadorService: ContadorService,
     public dialog: MatDialog
   ) {}
+
+  categorias = this.contadorService.getCategorias();
+  contadores = this.contadorService.getContadores();
 
   openDialog() {
     this.dialog.open(ModalComponent);
