@@ -47,3 +47,8 @@
   font-size: 20px;
   margin-bottom: 20px;
 }
+
+
+.flex-container button{
+  height: 56px;
+}
